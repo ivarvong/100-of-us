@@ -3,9 +3,9 @@
 
 	<script id="entry-template" type="text/x-handlebars-template">
 	<div class="photo">
-		<img src="http://placekitten.com/200/170" />
+		<img src="http://ivarvong.github.io/100-of-us/200px/image{{file}}.JPG" />
 		<div class="inner">
-			<img data-src="{{file}}-big.jpg" />
+			<img class="big-img" data-src="http://ivarvong.github.io/100-of-us/1000px/image{{file}}.JPG" />
 			<h2>{{name}}</h2>
 			<p>{{answer}}</p>
 		</div>
@@ -20,6 +20,7 @@
 		.container {
 			width: 1100px;
 			margin: 0 auto;
+			max-width: 100%;
 		}
 		.photo { 
 			width: 200px;
@@ -29,6 +30,19 @@
 		.photo .inner {
 			display: none;
 		}
+		.lightbox {
+			position: fixed;
+			left: 10%;
+			top: 10%;
+			width: 80%;
+			height: 80%;
+			display: none;
+
+		}
+		.lightbox img {
+			max-width: 100%;
+			max-height: 100%;
+			}
 	</style>
 
 </head>
@@ -36,6 +50,7 @@
 <body>
 
 <div class="container" />
+<div class="lightbox" />
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="tabletop.js"></script>
@@ -60,6 +75,9 @@ $(document).ready(function() {
 		});
 		$('.photo').on('click', function(el) {
 			console.log($(this).find('.inner').css('display', 'block'));
+			var img_tag = "<img src='" + $(this).find('.big-img').attr('data-src') + "' />";
+			console.log(img_tag);
+			$('.lightbox').html(img_tag).css('display', 'block');
 		});
 
 	});
