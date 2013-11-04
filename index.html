@@ -74,9 +74,9 @@ $(document).ready(function() {
 			$container.append( template(item) );
 		});
 		$('.photo').on('click', function(el) {
-			console.log($(this).find('.inner').css('display', 'block'));
+			$(this).find('.inner').css('display', 'block');
 			var img_tag = "<img src='" + $(this).find('.big-img').attr('data-src') + "' />";
-			console.log(img_tag);
+			//console.log(img_tag);
 			$('.lightbox').html(img_tag).css('display', 'block');
 		});
 
