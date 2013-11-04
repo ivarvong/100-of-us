@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<head>
+
+	<script id="entry-template" type="text/x-handlebars-template">
+	<div class="photo">
+		<img src="http://placekitten.com/200/170" />
+		<div class="inner">
+			<img data-src="{{file}}-big.jpg" />
+			<h2>{{name}}</h2>
+			<p>{{answer}}</p>
+		</div>
+	</div>
+	</script>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			width: 1100px;
+			margin: 0 auto;
+		}
+		.photo { 
+			width: 200px;
+			float: left;
+			margin: 4px;
+		}
+		.photo .inner {
+			display: none;
+		}
+	</style>
+
+</head>
+
+<body>
+
+<div class="container" />
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="tabletop.js"></script>
+<script src="handlebars-v1.1.0.js"></script>
+<script>
+function init(final_callback) {
+	Tabletop.init({ 
+	key: '0As1Yq-MxSBt2dG5XOTdkWVYwSkg2R1k1S0YxdHdrb2c',
+	callback: function(data, tabletop) { 
+		final_callback(data);
+	},
+	simpleSheet: true 
+	})
+}
+$(document).ready(function() {
+	var source   = $("#entry-template").html();
+	var template = Handlebars.compile(source);
+	var $container = $('.container');
+	init(function(data) {
+		data.forEach(function(item){
+			$container.append( template(item) );
+		});
+		$('.photo').on('click', function(el) {
+			console.log($(this).find('.inner').css('display', 'block'));
+		});
+
+	});
+	
+});
+</script>
+
+</body>
+</html>
