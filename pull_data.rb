@@ -11,15 +11,13 @@ records = []
 # http://stackoverflow.com/questions/4867883/convert-non-ascii-chars-from-ascii-8bit-to-utf-8
 data = open(url).read.force_encoding('utf-8').encode
 
-CSV.parse(data, headers: :first_row) do |row|
-  if !row['file'].nil? and !row['name'].nil? and !row['hear'].nil?
+CSV.parse(data, headers: :first_row) do |row|  
   	records << {
   		file: (CGI.escapeHTML(row['file']) rescue ''), 
   		name: (CGI.escapeHTML(row['name']) rescue ''),
   		hear: (CGI.escapeHTML(row['hear']) rescue ''),
   		say:  (CGI.escapeHTML(row['say']) rescue '')
   	}
-  end
 end
 
 File.open("./data.js", "w") do |f|
