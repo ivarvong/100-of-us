@@ -15,6 +15,7 @@ function init(final_callback) {
 window.bootstrap_data = function(data) {
 	window.data = data;
 }
+
 $(document).ready(function() {
 
 	window.light_box_active = false;
@@ -40,10 +41,13 @@ $(document).ready(function() {
 			$thumbnails.append( template(item) );
 		});
 		$('.photo').on('click', function(el) {			
-			$(this).find('.inner').css('display', 'block');
-			var img_tag = "<img src='" + $(this).find('.big-img').attr('data-src') + "' />";
-			console.log(img_tag);			
-			show_lightbox(img_tag);
+			var $inner = $(this).find('.inner');
+			//var $inner_img = $inner.find('img');
+			//console.log($inner_img);
+			//var $inner_img.attr('src', '');
+			var html = $inner.html();
+			console.log(html);			
+			show_lightbox(html);
 		});
 		$('.lightbox-wrapper').on('click', function(el) {
 			if (window.light_box_active === true) {
