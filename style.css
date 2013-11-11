@@ -14,6 +14,9 @@ html, body {
 	margin: 0 auto;
 	max-width: 100%;
 }
+.thumbnails {
+	margin-top: 15px;
+}
 .big-arrow {
 	background: url('./images/big-arrow.png');
 	background-width: 100%;
@@ -30,11 +33,13 @@ html, body {
 	margin: 0;
 	padding: 0;
 	width: 100%;	
-	height: 550px;
+	height: 650px;
 	background: url('./images/intro.jpg');
 	background-position:center; 
 	background-size: cover;
-	padding-top: 250px;
+	padding-top: 75px;
+	padding-bottom: 80px;
+
 }
 .intro .huge {
 	width: 220px;
@@ -43,15 +48,18 @@ html, body {
 	margin: 0 auto;
 	font-family: "Montserrat";
 	font-weight: 700;
+	padding-bottom: 75px;
 }
 .intro .copy {
 	width: 250px;
 	margin: 0 auto;
 	border: 3px solid #FFF;
 	color: white;
-	padding: 20px;
+	padding: 10px 25px;
 	font-family: "Garamond";
 	font-style: italic;
+	margin-bottom: 75px;
+	font-size: 17px;
 }
 .intro .show-me {
 	background: #ff2b2b;
