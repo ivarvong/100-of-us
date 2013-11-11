@@ -1,0 +1,30 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	width: 1100px;
+	margin: 0 auto;
+	max-width: 100%;
+}
+.photo { 
+	width: 200px;
+	float: left;
+	margin: 4px;
+}
+.photo .inner {
+	display: none;
+}
+.lightbox {
+	position: fixed;
+	left: 10%;
+	top: 10%;
+	width: 80%;
+	height: 80%;
+	display: none;
+
+}
+.lightbox img {
+	max-width: 100%;
+	max-height: 100%;
+}
