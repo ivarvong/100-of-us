@@ -3,6 +3,8 @@
 	<title>One hundred of us</title>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
 	<link href="style.css" rel="stylesheet">
+	
+	<!-- code by Ivar Vong. https://github.com/ivarvong/100-of-us http://twitter.com/ivarvong -->
 
 	<script id="entry-template" type="text/x-handlebars-template">
 		<div class="photo">
@@ -12,13 +14,11 @@
 					<img src="http://ivarvong.github.io/100-of-us/1000px/image{{file}}.JPG" />
 				</div>
 				<div class="right">
-					<h2>{{name}}</h2>
-					
+					<h2>{{name}}</h2>					
 					<p class="hear-prompt">WHAT DO YOU NEED TO HEAR MOST?</P>
-					<p class="hear">{{hear}}</p>
-
+					<p class="hear">{{{hear}}}</p>
 					<p class="say-prompt">WHAT DO YOU NEED TO SAY MOST?</P>
-					<p class="say">{{say}}</p>					
+					<p class="say">{{{say}}}</p>					
 				</div>
 			</div>
 		</div>
