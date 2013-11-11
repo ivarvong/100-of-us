@@ -24,13 +24,13 @@ $(document).ready(function() {
 	var $thumbnails = $('.thumbnails');
 	
 	var show_lightbox = function(contents) {
-		console.log('show_lightbox');
+		//console.log('show_lightbox');
 		window.light_box_active = true;
 		$('.lightbox-wrapper').css('display', 'block');
-		$('.lightbox').html(contents).css('display', 'block');
+		$('.lightbox').html(contents).css('display', 'block');		
 	}
 	var hide_lightbox = function() {
-		console.log('hide_lightbox');
+		//console.log('hide_lightbox');
 		$('.lightbox-wrapper').css('display', 'none');
 		$('.lightbox').html('');	
 		window.light_box_active = false;
@@ -46,8 +46,11 @@ $(document).ready(function() {
 			//console.log($inner_img);
 			//var $inner_img.attr('src', '');
 			var html = $inner.html();
-			console.log(html);			
+			//console.log(html);			
 			show_lightbox(html);
+			var name = $inner.find('h2').text();
+			console.log('name', name);
+			ga('send', 'event', 'thumbnail', name);
 		});
 		$('.lightbox-wrapper').on('click', function(el) {
 			if (window.light_box_active === true) {
