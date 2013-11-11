@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'csv'
+require 'cgi'
 require 'json'
 
 url = 'https://docs.google.com/spreadsheet/pub?key=0As1Yq-MxSBt2dG5XOTdkWVYwSkg2R1k1S0YxdHdrb2c&output=csv'
@@ -13,10 +14,10 @@ data = open(url).read.force_encoding('utf-8').encode
 CSV.parse(data, headers: :first_row) do |row|
   if !row['file'].nil? and !row['name'].nil? and !row['hear'].nil?
   	records << {
-  		file: row['file'], 
-  		name: row['name'],
-  		hear: row['hear'],
-  		say: row['say']
+  		file: (CGI.escapeHTML(row['file']) rescue ''), 
+  		name: (CGI.escapeHTML(row['name']) rescue ''),
+  		hear: (CGI.escapeHTML(row['hear']) rescue ''),
+  		say:  (CGI.escapeHTML(row['say']) rescue '')
   	}
   end
 end
