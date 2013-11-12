@@ -1,21 +1,3 @@
-/*
-function init(final_callback) {
-	Tabletop.init({ 
-		key: '0As1Yq-MxSBt2dG5XOTdkWVYwSkg2R1k1S0YxdHdrb2c',
-		callback: function(data, tabletop) { 
-			console.log(tabletop);
-			console.log(data);
-			//console.log( JSON.stringify(data) );
-			final_callback(data);
-		},
-		simpleSheet: true 
-	});
-}
-*/
-window.bootstrap_data = function(data) {
-	window.data = data;
-}
-
 $(document).ready(function() {
 
 	window.light_box_active = false;
@@ -60,12 +42,9 @@ $(document).ready(function() {
 
 	};
 
-	if (window.data == undefined) {
-		alert('Something terrible is happening. I\'m sorry');
-	} else {
-		build_thumbnails(window.data);
-	}
-	
-	
+	$.getJSON("http://gdoc.columntype.com/0As1Yq-MxSBt2dG5XOTdkWVYwSkg2R1k1S0YxdHdrb2c").success(function(data) {
+		//console.log(data);
+		build_thumbnails(data);
+	});
 	
 });
