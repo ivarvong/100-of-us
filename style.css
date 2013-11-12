@@ -43,23 +43,24 @@ html, body {
 }
 .intro .huge {
 	width: 220px;
-	font-size: 65px;
+	font-size: 120px;
 	color: #ff2b2b;
 	margin: 0 auto;
 	font-family: "Montserrat";
 	font-weight: 700;
 	padding-bottom: 75px;
+	padding-right: 100px;
 }
 .intro .copy {
-	width: 250px;
+	width: 450px;
 	margin: 0 auto;
-	border: 3px solid #FFF;
+	border: 9px solid #FFF;
 	color: white;
 	padding: 10px 25px;
 	font-family: "Garamond";
 	font-style: italic;
 	margin-bottom: 75px;
-	font-size: 17px;
+	font-size: 25px;
 }
 .intro .show-me {
 	background: #ff2b2b;
@@ -130,7 +131,7 @@ html, body {
 
 .hear-prompt, .say-prompt {
 	font-family: "Montserrat";
-	font-size: 12px;
+	font-size: 14px;
 	display: inline-block;
 	margin: 0;
 	padding: 20px 0;
