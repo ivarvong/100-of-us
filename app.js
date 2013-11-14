@@ -42,9 +42,9 @@ $(document).ready(function() {
 
 	};
 
-	$.getJSON("http://gdoc.columntype.com/0As1Yq-MxSBt2dG5XOTdkWVYwSkg2R1k1S0YxdHdrb2c").success(function(data) {
+	$.getJSON("http://gdoc.columntype.com/json/0As1Yq-MxSBt2dG5XOTdkWVYwSkg2R1k1S0YxdHdrb2c").success(function(response) {
 		//console.log(data);
-		build_thumbnails(data);
+		build_thumbnails(response.data);
 	});
 	
 });
